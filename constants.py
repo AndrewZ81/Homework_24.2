@@ -9,6 +9,3 @@ CMDS_TO_EXECUTE = {
     "sort": sort_query,
     "limit": limit_query
 }
-
-# Создаём регулярное выражение для фильтрации данных
-REGEX = "images\/\w+\.png"
