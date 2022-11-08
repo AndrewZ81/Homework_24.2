@@ -1,5 +1,20 @@
+import re
+
+
+def check_regex_incoming(data, regex=""):
+    regex_for_searching = re.compile(rf"{regex}")
+    searching_result = regex_for_searching.search(data)
+    if searching_result is None:
+        return False
+    return True
+
+
 def filter_query(data, param=""):
     return list(filter(lambda x: param in x, data))
+
+
+def filter_by_regex_query(data, param=""):
+    return list(filter(lambda x: check_regex_incoming(x, param), data))
 
 
 def map_query(data, param=""):
