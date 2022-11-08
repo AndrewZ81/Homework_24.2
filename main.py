@@ -18,7 +18,7 @@ def create_app(config_obj):
     return application
 
 
-def create_extensions(flask_app):
+def create_extensions(flask_app) -> None:
     """
     Создаёт расширения экземпляра класса Flask и конфигурирует их
     :param flask_app: Экземпляр класса Flask

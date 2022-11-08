@@ -2,6 +2,7 @@ from flask import request, jsonify
 from flask_restx import Resource, Namespace
 from marshmallow import ValidationError
 
+
 from app.schemes import RequestSchema
 from app.constructor import create_query
 
@@ -21,6 +22,7 @@ class QueriesView(Resource):
 
         cmd_1, cmd_2 = post_data["cmd_1"], post_data["cmd_2"]
         value_1, value_2 = post_data["value_1"], post_data["value_2"]
+
         try:
             return jsonify(create_query(cmd_1, value_1, cmd_2, value_2))
         except KeyError:
